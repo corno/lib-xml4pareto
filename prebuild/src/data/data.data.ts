@@ -2,15 +2,15 @@ import * as pd from 'pareto-core-data'
 
 import * as g_liana from "lib-liana/dist/main"
 
-import { $ as d_xml } from "./models/xml.data"
+import { $ as d_xml } from "./models/read.data"
 
 export const $: g_liana.T.CompileParameters<pd.SourceLocation> = {
     'outputs': pd.a([
         {
-            'path': `../../pareto/src/data/submodules/model/glossary.generated.ts`,
+            'path': `../../pareto/src/data/submodules/read/glossary.generated.ts`,
             'data': {
                 'settings': {
-                    'annotations': false,
+                    'annotations': true,
                     'datamodel': [true, {
                         'reference mapping': ['string', null],
                     }],

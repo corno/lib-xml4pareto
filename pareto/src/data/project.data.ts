@@ -6,7 +6,7 @@ const d = pd.d
 
 import { $ as d_main } from "./main/module.data"
 import { $ as d_bindings } from "./bindings/moduledefintion.data"
-import { $ as d_model } from "./submodules/model/module.data"
+import { $ as d_read } from "./submodules/read/module.data"
 
 export const $: mproject.T.Project<pd.SourceLocation> = {
     'author': "Corno",
@@ -20,7 +20,7 @@ export const $: mproject.T.Project<pd.SourceLocation> = {
     'type': ['library', {
         'main': d_main,
         'submodules': d({
-            "model": d_model,
+            "read": d_read,
         }),
         'bindings': [true, {
             'definition': d_bindings,

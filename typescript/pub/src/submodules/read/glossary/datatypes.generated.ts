@@ -107,48 +107,48 @@ export namespace T {
     
     export namespace Document {
         
-        export type root = T.Element
+        export type root<GAnnotation> = T.Element<GAnnotation>
     }
     
-    export type Document = {
-        readonly 'root': T.Element
+    export type Document<GAnnotation> = {
+        readonly 'root': T.Element<GAnnotation>
     }
     
     export namespace Element {
         
         export namespace attributes {
             
-            export type D = string
+            export type D<GAnnotation> = string
         }
         
-        export type attributes = pt.Dictionary<string>
+        export type attributes<GAnnotation> = pt.Dictionary<string>
         
         export namespace content {
             
             export namespace A {
                 
-                export type element = T.Element
+                export type element<GAnnotation> = T.Element<GAnnotation>
                 
-                export type text = string
+                export type text<GAnnotation> = string
             }
             
-            export type A = 
-                | ['element', T.Element]
+            export type A<GAnnotation> = 
+                | ['element', T.Element<GAnnotation>]
                 | ['text', string]
         }
         
-        export type content = pt.Array<
-            | ['element', T.Element]
+        export type content<GAnnotation> = pt.Array<
+            | ['element', T.Element<GAnnotation>]
             | ['text', string]
         >
         
-        export type name = string
+        export type name<GAnnotation> = string
     }
     
-    export type Element = {
+    export type Element<GAnnotation> = {
         readonly 'attributes': pt.Dictionary<string>
         readonly 'content': pt.Array<
-            | ['element', T.Element]
+            | ['element', T.Element<GAnnotation>]
             | ['text', string]
         >
         readonly 'name': string
